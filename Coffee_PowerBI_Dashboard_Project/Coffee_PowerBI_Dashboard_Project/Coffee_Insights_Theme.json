@@ -1,0 +1,16 @@
+{
+  "name": "Coffee Insights - Espresso & Caramel",
+  "dataColors": [
+    "#D99A5B",
+    "#8B5E3C",
+    "#F2C078",
+    "#B56B45",
+    "#6F4E37",
+    "#E7B278",
+    "#A98262",
+    "#F8E8D0"
+  ],
+  "background": "#F7F0E5",
+  "foreground": "#35251D",
+  "tableAccent": "#D99A5B"
+}

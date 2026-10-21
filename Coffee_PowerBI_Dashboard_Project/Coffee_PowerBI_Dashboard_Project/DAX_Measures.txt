@@ -1,0 +1,102 @@
+-- Create a date table: Modeling > New table
+Calendar =
+ADDCOLUMNS(
+    CALENDAR(MIN(Coffee[Date]), MAX(Coffee[Date])),
+    "Year", YEAR([Date]),
+    "Month Number", MONTH([Date]),
+    "Month", FORMAT([Date], "MMM"),
+    "Year Month", FORMAT([Date], "YYYY-MM"),
+    "Day Number", WEEKDAY([Date], 2),
+    "Day Name", FORMAT([Date], "ddd"),
+    "Day Type", IF(WEEKDAY([Date], 2) > 5, "Weekend", "Weekday")
+)
+
+-- Relationship: Calendar[Date] (1) -> Coffee[Date] (*)
+-- Mark Calendar as the date table using Calendar[Date].
+-- Sort Calendar[Month] by Calendar[Month Number].
+-- Sort Calendar[Day Name] by Calendar[Day Number].
+-- Sort Calendar[Year Month] by Calendar[Date] or a numeric YearMonthSort column.
+
+-- Base measures
+Total Spend = SUM(Coffee[Spend])
+
+Total Transactions = COUNTROWS(Coffee)
+
+Average Spend = DIVIDE([Total Spend], [Total Transactions], 0)
+
+Total Coffee Types = DISTINCTCOUNT(Coffee[coffee_name])
+
+-- Assumption: one row represents one drink transaction.
+Total Cups = [Total Transactions]
+
+-- Time intelligence
+Previous Month Spend =
+CALCULATE([Total Spend], DATEADD(Calendar[Date], -1, MONTH))
+
+MoM Spend Change % =
+DIVIDE([Total Spend] - [Previous Month Spend], [Previous Month Spend])
+
+Previous Period Spend =
+CALCULATE([Total Spend], DATEADD(Calendar[Date], -1, YEAR))
+
+YoY Spend Change % =
+DIVIDE([Total Spend] - [Previous Period Spend], [Previous Period Spend])
+
+-- Weekday / weekend
+Weekday Spend =
+CALCULATE([Total Spend], Calendar[Day Type] = "Weekday")
+
+Weekend Spend =
+CALCULATE([Total Spend], Calendar[Day Type] = "Weekend")
+
+Weekday Transactions =
+CALCULATE([Total Transactions], Calendar[Day Type] = "Weekday")
+
+Weekend Transactions =
+CALCULATE([Total Transactions], Calendar[Day Type] = "Weekend")
+
+Weekend Spend Share % =
+DIVIDE(
+    [Weekend Spend],
+    CALCULATE([Total Spend], REMOVEFILTERS(Calendar[Day Type]))
+)
+
+-- Hourly analysis
+Peak Hour Spend =
+MAXX(
+    TOPN(
+        1,
+        ADDCOLUMNS(
+            ALL(Coffee[hour_of_day]),
+            "_Spend", CALCULATE([Total Spend])
+        ),
+        [_Spend], DESC,
+        Coffee[hour_of_day], ASC
+    ),
+    [_Spend]
+)
+
+Peak Spend Hour =
+VAR HourTable =
+    ADDCOLUMNS(
+        ALL(Coffee[hour_of_day]),
+        "_Spend", CALCULATE([Total Spend])
+    )
+VAR TopHour =
+    TOPN(1, HourTable, [_Spend], DESC, Coffee[hour_of_day], ASC)
+RETURN
+    CONCATENATEX(TopHour, FORMAT(Coffee[hour_of_day], "00") & ":00", ", ")
+
+Peak Cups Hour =
+VAR HourTable =
+    ADDCOLUMNS(
+        ALL(Coffee[hour_of_day]),
+        "_Cups", CALCULATE([Total Cups])
+    )
+VAR TopHour =
+    TOPN(1, HourTable, [_Cups], DESC, Coffee[hour_of_day], ASC)
+RETURN
+    CONCATENATEX(TopHour, FORMAT(Coffee[hour_of_day], "00") & ":00", ", ")
+
+-- Optional supporting measures
+Spend per Transaction = DIVIDE([Total Spend], [Total Transactions], 0)
