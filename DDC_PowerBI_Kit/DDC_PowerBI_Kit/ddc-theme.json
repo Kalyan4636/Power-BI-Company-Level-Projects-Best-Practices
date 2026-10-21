@@ -1,0 +1,56 @@
+{
+  "name": "DDC Espresso",
+  "dataColors": [
+    "#F2A900",
+    "#C98A1B",
+    "#6B4F3A",
+    "#F3EFE6",
+    "#8A7B6E"
+  ],
+  "background": "#1C1511",
+  "foreground": "#F3EFE6",
+  "tableAccent": "#F2A900",
+  "textClasses": {
+    "title": {
+      "fontFace": "Segoe UI Semibold",
+      "color": "#F3EFE6",
+      "fontSize": 12
+    },
+    "label": {
+      "fontFace": "Segoe UI",
+      "color": "#8A7B6E",
+      "fontSize": 10
+    },
+    "callout": {
+      "fontFace": "Segoe UI Light",
+      "color": "#F3EFE6",
+      "fontSize": 28
+    }
+  },
+  "visualStyles": {
+    "*": {
+      "*": {
+        "background": [
+          {
+            "color": {
+              "solid": {
+                "color": "#261D17"
+              }
+            },
+            "transparency": 0
+          }
+        ],
+        "border": [
+          {
+            "show": false
+          }
+        ],
+        "visualHeader": [
+          {
+            "show": false
+          }
+        ]
+      }
+    }
+  }
+}

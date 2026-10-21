@@ -1,0 +1,33 @@
+// ===== Create a dedicated table "_Measures" (Enter Data, delete the dummy column) =====
+Revenue = SUM ( FactSales[Revenue] )
+Orders = SUM ( FactSales[Orders] )
+AOV = DIVIDE ( [Revenue], [Orders] )
+
+Revenue LY = CALCULATE ( [Revenue], SAMEPERIODLASTYEAR ( DimDate[Date] ) )
+Revenue YoY % = DIVIDE ( [Revenue] - [Revenue LY], [Revenue LY] )
+Revenue YoY Label =
+VAR g = [Revenue YoY %]
+RETURN IF ( ISBLANK ( g ), "—", FORMAT ( g, "▲ 0.0%;▼ 0.0%" ) & " vs LY" )
+
+Top Product =
+VAR t = TOPN ( 1, ALLSELECTED ( DimProduct[Product] ), [Revenue] )
+RETURN MAXX ( t, DimProduct[Product] )
+
+Top Product Share =
+VAR tp = [Top Product]
+RETURN DIVIDE (
+    CALCULATE ( [Revenue], DimProduct[Product] = tp ),
+    CALCULATE ( [Revenue], ALLSELECTED ( DimProduct ) )
+)
+
+Channel Share % = DIVIDE ( [Revenue], CALCULATE ( [Revenue], ALLSELECTED ( DimChannel ) ) )
+
+// Conditional-format the product bars: amber = top product / selected, brown = rest
+Bar Colour =
+IF ( ISFILTERED ( DimProduct[Product] ), "#F2A900",
+     IF ( [Revenue] = MAXX ( ALLSELECTED ( DimProduct[Product] ), [Revenue] ), "#F2A900", "#6B4F3A" ) )
+
+Period Label = "Coffee Sales · " & SELECTEDVALUE ( DimDate[Year], "All years" )
+
+// DimDate (calculated alternative to the CSV)
+// DimDate = ADDCOLUMNS ( CALENDAR ( DATE(2025,1,1), DATE(2026,12,31) ), "Year", YEAR([Date]), "Quarter", "Q" & QUARTER([Date]), "MonthNum", MONTH([Date]), "MonthName", FORMAT([Date],"mmm") )

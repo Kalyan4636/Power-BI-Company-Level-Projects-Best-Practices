@@ -1,0 +1,251 @@
+Date,Campaign,Channel,Caller ID,Destination,Status,Response Time (min),Agent
+2026-09-25 14:51:00,Win-back Campaign,SMS,client@example.com,team@example.com,Completed,12,Taylor Morgan
+2026-02-26 08:15:00,Renewal Reminder,SMS,+1 555 2310,client@example.com,Pending,42,Jordan Lee
+2026-10-10 08:08:00,Win-back Campaign,Email,alex@example.com,team@example.com,Pending,29,Jordan Lee
+2026-06-19 16:07:00,Customer Survey,Email,+1 555 0531,team@example.com,Completed,20,Casey Patel
+2026-03-14 18:51:00,Welcome Series,SMS,+1 555 7642,+1 555 3492,Completed,22,Riley Chen
+2026-01-27 13:03:00,Customer Survey,Email,+1 555 1359,+1 555 2409,Completed,1,Riley Chen
+2026-04-20 11:33:00,Newsletter,Email,+1 555 1359,team@example.com,Completed,5,Riley Chen
+2026-09-30 16:57:00,Newsletter,Call,+1 555 1359,+1 555 3492,Completed,23,Alexandra Rose
+2026-05-20 13:00:00,Welcome Series,Call,+1 555 7642,+1 555 3492,Failed,,Casey Patel
+2026-01-28 11:19:00,Customer Survey,Call,+1 555 0531,team@example.com,Pending,101,Riley Chen
+2026-09-26 18:08:00,Customer Survey,SMS,+1 555 1359,+1 555 5630,Pending,85,Taylor Morgan
+2026-03-19 18:07:00,Newsletter,Email,+1 555 2310,+1 555 3492,Completed,35,Alexandra Rose
+2026-03-24 14:05:00,Win-back Campaign,Email,+1 555 7642,client@example.com,Completed,17,Alexandra Rose
+2026-10-05 09:34:00,Newsletter,Email,alex@example.com,+1 555 5630,Completed,35,Taylor Morgan
+2026-01-26 15:37:00,Customer Survey,SMS,alex@example.com,client@example.com,Completed,36,Alexandra Rose
+2026-08-24 11:14:00,Renewal Reminder,SMS,+1 555 0531,team@example.com,Pending,56,Riley Chen
+2026-09-23 14:03:00,Product Launch,Email,alex@example.com,+1 555 5630,Completed,38,Riley Chen
+2026-06-10 13:11:00,Customer Survey,Email,+1 555 2310,client@example.com,Pending,48,Riley Chen
+2026-02-17 16:06:00,Win-back Campaign,SMS,alex@example.com,+1 555 5630,Completed,37,Casey Patel
+2026-08-26 15:54:00,Customer Survey,SMS,+1 555 0531,+1 555 3492,Completed,31,Taylor Morgan
+2026-04-05 08:52:00,Product Launch,Email,+1 555 0531,+1 555 3492,Completed,22,Alexandra Rose
+2026-09-23 18:44:00,Renewal Reminder,Call,+1 555 1359,+1 555 2409,Completed,20,Alexandra Rose
+2026-08-22 16:52:00,Welcome Series,Email,+1 555 7642,+1 555 2409,Completed,42,Casey Patel
+2026-01-30 16:03:00,Newsletter,Call,+1 555 2310,team@example.com,Completed,18,Riley Chen
+2026-08-02 14:58:00,Welcome Series,Call,client@example.com,+1 555 2409,Pending,53,Taylor Morgan
+2026-06-16 13:07:00,Customer Survey,SMS,+1 555 2310,client@example.com,Completed,16,Alexandra Rose
+2026-05-11 11:04:00,Customer Survey,Email,+1 555 2310,+1 555 5630,Completed,13,Jordan Lee
+2026-09-16 17:09:00,Renewal Reminder,Email,+1 555 7642,team@example.com,Completed,29,Riley Chen
+2026-03-20 18:35:00,Customer Survey,Call,+1 555 2310,client@example.com,Completed,21,Alexandra Rose
+2026-05-01 10:57:00,Renewal Reminder,Email,+1 555 2310,team@example.com,Pending,64,Casey Patel
+2026-09-14 10:18:00,Product Launch,Email,+1 555 2310,+1 555 2409,Completed,33,Alexandra Rose
+2026-06-21 15:04:00,Product Launch,SMS,+1 555 1359,+1 555 2409,Pending,58,Taylor Morgan
+2026-02-07 12:21:00,Product Launch,Email,client@example.com,+1 555 3492,Completed,10,Taylor Morgan
+2026-07-16 13:58:00,Welcome Series,SMS,client@example.com,+1 555 3492,Completed,28,Jordan Lee
+2026-04-21 11:34:00,Customer Survey,Email,+1 555 2310,+1 555 2409,Pending,65,Taylor Morgan
+2026-07-27 18:13:00,Renewal Reminder,Email,+1 555 0531,+1 555 3492,Completed,37,Casey Patel
+2026-07-26 14:39:00,Customer Survey,Call,+1 555 1359,+1 555 5630,Completed,11,Jordan Lee
+2026-07-05 11:14:00,Customer Survey,Email,client@example.com,+1 555 5630,Pending,19,Taylor Morgan
+2026-09-14 10:37:00,Welcome Series,SMS,+1 555 1359,+1 555 5630,Completed,42,Casey Patel
+2026-07-21 11:43:00,Product Launch,SMS,+1 555 2310,client@example.com,Completed,45,Jordan Lee
+2026-03-30 15:00:00,Customer Survey,SMS,+1 555 0531,+1 555 5630,Completed,42,Casey Patel
+2026-01-16 12:30:00,Welcome Series,Call,+1 555 0531,+1 555 3492,Completed,10,Casey Patel
+2026-01-28 09:57:00,Renewal Reminder,SMS,+1 555 2310,client@example.com,Completed,17,Riley Chen
+2026-05-15 17:02:00,Newsletter,Email,alex@example.com,team@example.com,Completed,35,Alexandra Rose
+2026-01-29 12:18:00,Product Launch,SMS,alex@example.com,+1 555 2409,Failed,,Alexandra Rose
+2026-07-10 13:30:00,Newsletter,SMS,+1 555 1359,+1 555 2409,Pending,73,Riley Chen
+2026-02-28 13:33:00,Renewal Reminder,Email,alex@example.com,+1 555 2409,Pending,24,Alexandra Rose
+2026-07-20 09:43:00,Renewal Reminder,Email,+1 555 7642,+1 555 2409,Completed,13,Taylor Morgan
+2026-01-10 17:06:00,Newsletter,Email,client@example.com,+1 555 3492,Completed,15,Taylor Morgan
+2026-06-19 16:01:00,Customer Survey,SMS,+1 555 0531,+1 555 3492,Completed,41,Riley Chen
+2026-06-15 15:59:00,Renewal Reminder,Email,client@example.com,client@example.com,Pending,21,Taylor Morgan
+2026-03-04 17:53:00,Win-back Campaign,Email,+1 555 2310,+1 555 2409,Pending,19,Jordan Lee
+2026-04-13 12:47:00,Welcome Series,SMS,+1 555 7642,team@example.com,Completed,25,Casey Patel
+2026-07-31 18:16:00,Renewal Reminder,SMS,+1 555 1359,+1 555 5630,Completed,26,Taylor Morgan
+2026-04-29 18:20:00,Renewal Reminder,SMS,+1 555 0531,+1 555 5630,Pending,37,Riley Chen
+2026-08-28 11:28:00,Welcome Series,SMS,+1 555 1359,+1 555 2409,Pending,89,Jordan Lee
+2026-01-03 12:03:00,Customer Survey,Email,+1 555 7642,+1 555 2409,Pending,56,Riley Chen
+2026-10-14 16:49:00,Win-back Campaign,Call,alex@example.com,+1 555 3492,Completed,21,Jordan Lee
+2026-07-03 17:38:00,Renewal Reminder,Email,+1 555 7642,client@example.com,Completed,18,Alexandra Rose
+2026-03-07 08:57:00,Renewal Reminder,Call,+1 555 0531,+1 555 2409,Completed,29,Jordan Lee
+2026-07-15 14:42:00,Product Launch,Email,+1 555 1359,+1 555 2409,Completed,13,Riley Chen
+2026-08-28 13:09:00,Win-back Campaign,SMS,+1 555 2310,+1 555 3492,Failed,,Casey Patel
+2026-08-29 09:11:00,Welcome Series,Call,+1 555 2310,team@example.com,Completed,20,Riley Chen
+2026-05-12 13:28:00,Newsletter,Call,client@example.com,+1 555 5630,Completed,29,Riley Chen
+2026-04-19 11:06:00,Product Launch,Call,+1 555 2310,+1 555 3492,Completed,3,Jordan Lee
+2026-04-18 16:11:00,Renewal Reminder,Call,alex@example.com,+1 555 2409,Failed,,Casey Patel
+2026-01-17 18:29:00,Customer Survey,SMS,alex@example.com,+1 555 2409,Completed,35,Alexandra Rose
+2026-02-15 09:39:00,Customer Survey,Call,client@example.com,+1 555 2409,Pending,113,Jordan Lee
+2026-05-27 10:51:00,Newsletter,SMS,+1 555 2310,client@example.com,Pending,103,Jordan Lee
+2026-10-16 15:52:00,Customer Survey,SMS,+1 555 1359,+1 555 5630,Pending,100,Riley Chen
+2026-08-07 12:29:00,Win-back Campaign,SMS,+1 555 2310,+1 555 5630,Completed,34,Taylor Morgan
+2026-01-20 08:46:00,Newsletter,Email,alex@example.com,+1 555 2409,Pending,20,Riley Chen
+2026-04-19 09:51:00,Customer Survey,Email,+1 555 2310,+1 555 5630,Completed,39,Casey Patel
+2026-09-01 11:38:00,Welcome Series,Call,+1 555 1359,team@example.com,Failed,,Jordan Lee
+2026-09-26 18:04:00,Renewal Reminder,SMS,+1 555 2310,team@example.com,Completed,18,Jordan Lee
+2026-06-25 15:09:00,Newsletter,Email,+1 555 2310,+1 555 2409,Failed,,Casey Patel
+2026-05-16 15:24:00,Customer Survey,Email,client@example.com,+1 555 3492,Completed,11,Alexandra Rose
+2026-04-19 18:47:00,Win-back Campaign,Call,client@example.com,+1 555 3492,Completed,40,Taylor Morgan
+2026-09-19 13:44:00,Welcome Series,SMS,+1 555 7642,+1 555 2409,Completed,16,Casey Patel
+2026-01-17 14:41:00,Product Launch,Email,alex@example.com,+1 555 3492,Completed,40,Taylor Morgan
+2026-09-17 12:36:00,Newsletter,Email,client@example.com,+1 555 3492,Pending,10,Alexandra Rose
+2026-04-25 16:52:00,Welcome Series,Call,alex@example.com,team@example.com,Completed,21,Taylor Morgan
+2026-01-18 11:19:00,Renewal Reminder,SMS,client@example.com,+1 555 5630,Failed,,Riley Chen
+2026-01-05 13:27:00,Win-back Campaign,Call,client@example.com,team@example.com,Pending,105,Taylor Morgan
+2026-10-10 16:34:00,Product Launch,SMS,+1 555 2310,+1 555 2409,Completed,40,Riley Chen
+2026-03-27 15:55:00,Product Launch,SMS,+1 555 0531,+1 555 2409,Pending,24,Jordan Lee
+2026-04-14 11:23:00,Welcome Series,SMS,+1 555 7642,team@example.com,Completed,1,Casey Patel
+2026-03-26 09:41:00,Renewal Reminder,Email,+1 555 0531,team@example.com,Completed,45,Casey Patel
+2026-08-22 11:39:00,Newsletter,Email,+1 555 2310,team@example.com,Completed,2,Jordan Lee
+2026-04-03 18:56:00,Win-back Campaign,Email,client@example.com,+1 555 2409,Completed,25,Taylor Morgan
+2026-04-21 11:16:00,Product Launch,Email,alex@example.com,+1 555 3492,Completed,43,Alexandra Rose
+2026-02-14 18:30:00,Customer Survey,Email,+1 555 2310,team@example.com,Completed,27,Jordan Lee
+2026-09-20 11:15:00,Newsletter,SMS,+1 555 1359,+1 555 5630,Failed,,Riley Chen
+2026-07-25 18:34:00,Product Launch,SMS,+1 555 2310,team@example.com,Completed,2,Taylor Morgan
+2026-05-31 15:23:00,Product Launch,SMS,+1 555 1359,+1 555 2409,Completed,41,Riley Chen
+2026-05-16 17:36:00,Renewal Reminder,SMS,+1 555 7642,+1 555 2409,Completed,21,Jordan Lee
+2026-03-30 11:43:00,Customer Survey,Call,+1 555 2310,+1 555 2409,Completed,34,Jordan Lee
+2026-03-07 16:09:00,Newsletter,SMS,+1 555 7642,team@example.com,Completed,14,Alexandra Rose
+2026-05-11 13:05:00,Product Launch,SMS,+1 555 2310,+1 555 5630,Completed,16,Casey Patel
+2026-08-09 08:03:00,Welcome Series,Call,alex@example.com,+1 555 2409,Completed,4,Taylor Morgan
+2026-09-27 14:44:00,Newsletter,Call,+1 555 2310,+1 555 3492,Failed,,Alexandra Rose
+2026-01-14 14:31:00,Newsletter,SMS,+1 555 1359,+1 555 5630,Completed,44,Riley Chen
+2026-02-10 10:40:00,Renewal Reminder,SMS,+1 555 1359,+1 555 2409,Completed,31,Taylor Morgan
+2026-02-07 11:01:00,Product Launch,Call,alex@example.com,+1 555 2409,Completed,38,Taylor Morgan
+2026-04-16 13:53:00,Customer Survey,SMS,alex@example.com,+1 555 5630,Completed,4,Jordan Lee
+2026-03-15 14:48:00,Newsletter,Call,+1 555 1359,+1 555 3492,Completed,44,Jordan Lee
+2026-05-23 17:31:00,Win-back Campaign,Email,+1 555 1359,team@example.com,Pending,94,Jordan Lee
+2026-05-07 15:08:00,Customer Survey,Call,+1 555 0531,+1 555 2409,Completed,32,Casey Patel
+2026-03-29 18:39:00,Win-back Campaign,Email,+1 555 0531,+1 555 5630,Completed,8,Jordan Lee
+2026-09-22 08:54:00,Product Launch,SMS,+1 555 1359,+1 555 3492,Pending,119,Taylor Morgan
+2026-01-29 12:24:00,Welcome Series,Email,client@example.com,+1 555 3492,Failed,,Riley Chen
+2026-09-10 12:34:00,Renewal Reminder,Call,+1 555 0531,+1 555 2409,Completed,16,Riley Chen
+2026-09-24 12:56:00,Customer Survey,Email,+1 555 7642,+1 555 5630,Completed,32,Alexandra Rose
+2026-05-06 15:55:00,Welcome Series,Email,+1 555 2310,team@example.com,Completed,4,Riley Chen
+2026-07-12 10:56:00,Customer Survey,Email,+1 555 1359,+1 555 2409,Completed,35,Riley Chen
+2026-09-26 14:59:00,Customer Survey,Call,client@example.com,team@example.com,Completed,23,Alexandra Rose
+2026-06-07 14:24:00,Newsletter,SMS,client@example.com,team@example.com,Completed,11,Jordan Lee
+2026-04-27 14:32:00,Welcome Series,SMS,+1 555 2310,+1 555 5630,Completed,6,Jordan Lee
+2026-06-24 16:18:00,Win-back Campaign,SMS,+1 555 1359,client@example.com,Completed,13,Riley Chen
+2026-02-20 14:00:00,Newsletter,Email,client@example.com,client@example.com,Completed,36,Casey Patel
+2026-03-16 14:19:00,Newsletter,SMS,+1 555 1359,+1 555 5630,Failed,,Riley Chen
+2026-01-28 09:26:00,Product Launch,SMS,+1 555 2310,client@example.com,Completed,35,Jordan Lee
+2026-08-10 11:34:00,Customer Survey,Email,+1 555 1359,+1 555 3492,Completed,37,Jordan Lee
+2026-03-24 18:29:00,Newsletter,Email,client@example.com,+1 555 5630,Completed,44,Taylor Morgan
+2026-05-25 17:55:00,Win-back Campaign,SMS,+1 555 0531,+1 555 5630,Failed,,Riley Chen
+2026-07-19 15:49:00,Renewal Reminder,SMS,+1 555 2310,client@example.com,Pending,38,Casey Patel
+2026-04-12 08:17:00,Newsletter,Email,+1 555 0531,client@example.com,Pending,58,Jordan Lee
+2026-05-27 11:41:00,Welcome Series,Email,alex@example.com,+1 555 3492,Completed,13,Riley Chen
+2026-08-28 12:53:00,Product Launch,Email,alex@example.com,client@example.com,Completed,43,Casey Patel
+2026-01-13 18:18:00,Win-back Campaign,Call,+1 555 1359,client@example.com,Completed,38,Alexandra Rose
+2026-05-07 15:23:00,Welcome Series,SMS,client@example.com,+1 555 2409,Completed,31,Jordan Lee
+2026-01-26 09:05:00,Welcome Series,Email,alex@example.com,client@example.com,Completed,30,Taylor Morgan
+2026-08-28 12:39:00,Customer Survey,SMS,+1 555 0531,+1 555 3492,Completed,17,Taylor Morgan
+2026-08-09 14:16:00,Win-back Campaign,SMS,+1 555 2310,team@example.com,Completed,3,Riley Chen
+2026-01-06 10:29:00,Welcome Series,SMS,client@example.com,+1 555 5630,Completed,29,Riley Chen
+2026-04-25 11:21:00,Renewal Reminder,SMS,alex@example.com,+1 555 5630,Completed,23,Casey Patel
+2026-08-10 13:20:00,Renewal Reminder,SMS,+1 555 0531,client@example.com,Completed,45,Casey Patel
+2026-05-20 12:28:00,Newsletter,Email,+1 555 2310,+1 555 2409,Pending,60,Casey Patel
+2026-02-11 11:51:00,Renewal Reminder,SMS,alex@example.com,client@example.com,Completed,17,Riley Chen
+2026-06-07 09:57:00,Win-back Campaign,Email,+1 555 7642,+1 555 2409,Pending,38,Casey Patel
+2026-01-10 16:45:00,Customer Survey,Email,+1 555 0531,+1 555 3492,Failed,,Casey Patel
+2026-03-23 08:14:00,Newsletter,Email,+1 555 0531,client@example.com,Failed,,Casey Patel
+2026-08-06 17:46:00,Win-back Campaign,Email,+1 555 7642,+1 555 2409,Completed,28,Taylor Morgan
+2026-05-06 18:15:00,Newsletter,Call,+1 555 2310,client@example.com,Completed,34,Riley Chen
+2026-08-01 12:03:00,Newsletter,Call,+1 555 1359,+1 555 5630,Completed,2,Alexandra Rose
+2026-02-08 11:52:00,Customer Survey,Call,+1 555 0531,client@example.com,Completed,31,Taylor Morgan
+2026-08-06 10:18:00,Renewal Reminder,SMS,+1 555 1359,+1 555 2409,Completed,35,Alexandra Rose
+2026-03-27 09:59:00,Customer Survey,Email,+1 555 7642,+1 555 3492,Completed,27,Alexandra Rose
+2026-01-17 08:26:00,Win-back Campaign,Email,+1 555 0531,team@example.com,Completed,40,Riley Chen
+2026-07-09 17:19:00,Customer Survey,Call,+1 555 0531,client@example.com,Completed,31,Riley Chen
+2026-10-02 11:25:00,Product Launch,Call,+1 555 2310,+1 555 5630,Pending,27,Alexandra Rose
+2026-05-16 12:42:00,Customer Survey,Email,alex@example.com,client@example.com,Completed,3,Alexandra Rose
+2026-03-22 12:20:00,Win-back Campaign,Email,+1 555 0531,team@example.com,Completed,12,Alexandra Rose
+2026-10-16 18:29:00,Product Launch,Call,+1 555 1359,client@example.com,Failed,,Jordan Lee
+2026-05-21 17:30:00,Product Launch,Email,+1 555 7642,+1 555 5630,Completed,22,Taylor Morgan
+2026-09-30 12:30:00,Win-back Campaign,Email,+1 555 7642,team@example.com,Completed,43,Jordan Lee
+2026-10-13 11:48:00,Customer Survey,Email,client@example.com,client@example.com,Completed,16,Taylor Morgan
+2026-01-10 11:37:00,Renewal Reminder,SMS,alex@example.com,client@example.com,Completed,36,Riley Chen
+2026-07-12 11:51:00,Customer Survey,Email,+1 555 2310,client@example.com,Pending,31,Casey Patel
+2026-04-06 14:22:00,Renewal Reminder,SMS,+1 555 1359,+1 555 3492,Completed,5,Taylor Morgan
+2026-09-27 11:35:00,Win-back Campaign,Call,+1 555 7642,+1 555 3492,Failed,,Jordan Lee
+2026-07-13 08:49:00,Product Launch,Email,+1 555 1359,team@example.com,Completed,28,Jordan Lee
+2026-09-16 18:44:00,Win-back Campaign,Call,client@example.com,+1 555 3492,Completed,24,Casey Patel
+2026-06-06 16:38:00,Product Launch,SMS,+1 555 0531,+1 555 3492,Completed,37,Casey Patel
+2026-03-30 15:26:00,Welcome Series,Email,+1 555 1359,team@example.com,Pending,20,Alexandra Rose
+2026-05-19 16:40:00,Renewal Reminder,Call,client@example.com,+1 555 2409,Pending,109,Casey Patel
+2026-07-09 16:11:00,Newsletter,SMS,client@example.com,+1 555 3492,Completed,4,Alexandra Rose
+2026-07-06 08:53:00,Newsletter,Email,+1 555 1359,+1 555 5630,Completed,32,Jordan Lee
+2026-06-13 18:00:00,Newsletter,Email,+1 555 1359,+1 555 5630,Pending,97,Riley Chen
+2026-06-29 09:21:00,Welcome Series,Call,+1 555 2310,+1 555 5630,Pending,56,Riley Chen
+2026-06-17 18:31:00,Renewal Reminder,SMS,+1 555 2310,client@example.com,Completed,45,Jordan Lee
+2026-02-24 17:00:00,Welcome Series,Email,+1 555 2310,team@example.com,Completed,7,Alexandra Rose
+2026-03-15 14:13:00,Win-back Campaign,Call,+1 555 1359,+1 555 3492,Pending,78,Taylor Morgan
+2026-01-12 12:48:00,Product Launch,Call,+1 555 1359,client@example.com,Completed,21,Riley Chen
+2026-01-14 08:38:00,Customer Survey,SMS,+1 555 0531,+1 555 2409,Completed,27,Riley Chen
+2026-05-29 11:44:00,Renewal Reminder,Call,client@example.com,+1 555 2409,Completed,38,Casey Patel
+2026-08-31 11:48:00,Renewal Reminder,Email,+1 555 0531,+1 555 2409,Completed,7,Taylor Morgan
+2026-08-10 12:31:00,Customer Survey,Email,+1 555 1359,+1 555 3492,Pending,76,Alexandra Rose
+2026-10-04 17:05:00,Renewal Reminder,SMS,client@example.com,+1 555 2409,Completed,13,Jordan Lee
+2026-09-06 09:43:00,Renewal Reminder,SMS,client@example.com,+1 555 2409,Pending,64,Jordan Lee
+2026-10-16 16:46:00,Newsletter,Email,+1 555 0531,+1 555 5630,Completed,11,Alexandra Rose
+2026-02-12 10:28:00,Welcome Series,Email,+1 555 1359,client@example.com,Completed,45,Jordan Lee
+2026-05-27 17:54:00,Win-back Campaign,Email,+1 555 2310,client@example.com,Completed,23,Casey Patel
+2026-03-07 16:29:00,Win-back Campaign,Call,+1 555 0531,+1 555 2409,Completed,14,Casey Patel
+2026-07-16 14:12:00,Customer Survey,SMS,alex@example.com,+1 555 5630,Completed,43,Alexandra Rose
+2026-10-15 11:45:00,Product Launch,Email,client@example.com,client@example.com,Completed,10,Jordan Lee
+2026-02-12 18:54:00,Customer Survey,SMS,+1 555 0531,client@example.com,Failed,,Riley Chen
+2026-06-02 10:01:00,Product Launch,Email,+1 555 0531,+1 555 5630,Completed,37,Alexandra Rose
+2026-10-07 18:53:00,Renewal Reminder,Call,client@example.com,+1 555 5630,Completed,16,Alexandra Rose
+2026-01-23 08:20:00,Newsletter,Call,+1 555 1359,+1 555 5630,Completed,2,Casey Patel
+2026-03-07 10:47:00,Newsletter,Call,+1 555 1359,+1 555 5630,Completed,3,Casey Patel
+2026-08-30 15:46:00,Welcome Series,Call,+1 555 1359,client@example.com,Completed,15,Alexandra Rose
+2026-08-29 08:28:00,Newsletter,Email,+1 555 0531,+1 555 3492,Pending,113,Jordan Lee
+2026-09-08 13:41:00,Customer Survey,SMS,alex@example.com,+1 555 2409,Pending,85,Taylor Morgan
+2026-03-01 15:27:00,Newsletter,Call,+1 555 0531,client@example.com,Pending,18,Jordan Lee
+2026-03-11 08:39:00,Newsletter,Email,+1 555 7642,client@example.com,Completed,12,Casey Patel
+2026-10-04 14:37:00,Product Launch,Call,+1 555 7642,+1 555 2409,Pending,22,Alexandra Rose
+2026-09-26 18:46:00,Win-back Campaign,Call,+1 555 2310,+1 555 5630,Completed,6,Alexandra Rose
+2026-07-25 10:58:00,Renewal Reminder,Call,+1 555 7642,team@example.com,Completed,43,Casey Patel
+2026-03-31 10:57:00,Welcome Series,SMS,+1 555 1359,+1 555 3492,Completed,13,Casey Patel
+2026-06-06 13:10:00,Newsletter,Email,+1 555 2310,+1 555 5630,Completed,16,Alexandra Rose
+2026-04-22 14:18:00,Win-back Campaign,SMS,+1 555 2310,+1 555 3492,Completed,39,Taylor Morgan
+2026-07-18 12:45:00,Win-back Campaign,Email,client@example.com,team@example.com,Completed,12,Jordan Lee
+2026-07-10 09:27:00,Product Launch,Email,client@example.com,+1 555 5630,Completed,4,Riley Chen
+2026-06-18 17:03:00,Welcome Series,Call,+1 555 1359,+1 555 2409,Completed,36,Alexandra Rose
+2026-01-15 16:00:00,Product Launch,Call,+1 555 7642,team@example.com,Failed,,Jordan Lee
+2026-01-23 18:53:00,Newsletter,SMS,+1 555 7642,+1 555 2409,Completed,16,Alexandra Rose
+2026-02-26 11:03:00,Product Launch,SMS,+1 555 7642,+1 555 5630,Completed,36,Alexandra Rose
+2026-04-06 18:41:00,Welcome Series,Email,alex@example.com,client@example.com,Completed,16,Casey Patel
+2026-10-02 13:59:00,Renewal Reminder,Email,+1 555 2310,+1 555 5630,Completed,45,Casey Patel
+2026-09-11 08:38:00,Newsletter,Call,+1 555 0531,team@example.com,Pending,109,Taylor Morgan
+2026-01-02 09:18:00,Product Launch,Email,+1 555 1359,+1 555 3492,Pending,32,Alexandra Rose
+2026-01-21 12:50:00,Product Launch,Call,+1 555 1359,client@example.com,Pending,16,Taylor Morgan
+2026-02-01 08:29:00,Newsletter,Email,+1 555 2310,+1 555 2409,Completed,20,Taylor Morgan
+2026-07-10 11:25:00,Product Launch,SMS,client@example.com,client@example.com,Completed,15,Alexandra Rose
+2026-09-23 16:17:00,Renewal Reminder,SMS,+1 555 7642,+1 555 3492,Pending,27,Riley Chen
+2026-06-29 17:26:00,Product Launch,SMS,+1 555 7642,+1 555 2409,Completed,5,Taylor Morgan
+2026-05-22 09:42:00,Renewal Reminder,Call,alex@example.com,+1 555 5630,Completed,35,Alexandra Rose
+2026-07-20 11:27:00,Win-back Campaign,Email,client@example.com,+1 555 3492,Completed,10,Jordan Lee
+2026-01-13 12:30:00,Welcome Series,Email,+1 555 0531,+1 555 5630,Completed,36,Alexandra Rose
+2026-06-20 18:06:00,Product Launch,Call,+1 555 1359,+1 555 2409,Completed,26,Riley Chen
+2026-01-12 12:07:00,Welcome Series,SMS,+1 555 0531,+1 555 3492,Pending,101,Riley Chen
+2026-10-17 11:16:00,Product Launch,Call,client@example.com,client@example.com,Completed,39,Taylor Morgan
+2026-01-21 15:16:00,Win-back Campaign,SMS,+1 555 7642,+1 555 5630,Completed,39,Jordan Lee
+2026-03-05 18:33:00,Customer Survey,SMS,+1 555 2310,+1 555 2409,Completed,32,Taylor Morgan
+2026-09-27 12:35:00,Newsletter,SMS,+1 555 7642,team@example.com,Completed,22,Taylor Morgan
+2026-03-25 16:59:00,Customer Survey,SMS,client@example.com,+1 555 3492,Pending,30,Alexandra Rose
+2026-07-24 10:57:00,Product Launch,Call,+1 555 7642,+1 555 3492,Completed,17,Alexandra Rose
+2026-10-04 18:28:00,Win-back Campaign,Email,+1 555 2310,+1 555 5630,Completed,26,Riley Chen
+2026-01-17 11:03:00,Product Launch,Email,alex@example.com,team@example.com,Completed,6,Alexandra Rose
+2026-07-06 16:41:00,Win-back Campaign,SMS,+1 555 2310,client@example.com,Completed,7,Casey Patel
+2026-05-09 17:45:00,Win-back Campaign,Email,+1 555 2310,client@example.com,Completed,3,Taylor Morgan
+2026-03-27 15:57:00,Newsletter,Email,alex@example.com,client@example.com,Completed,16,Riley Chen
+2026-05-07 15:37:00,Newsletter,SMS,+1 555 2310,client@example.com,Completed,28,Casey Patel
+2026-10-04 15:33:00,Product Launch,Call,alex@example.com,+1 555 2409,Pending,97,Riley Chen
+2026-10-07 16:28:00,Newsletter,Call,alex@example.com,+1 555 3492,Failed,,Alexandra Rose
+2026-03-25 18:10:00,Product Launch,Email,client@example.com,+1 555 2409,Completed,35,Riley Chen
+2026-02-12 08:35:00,Renewal Reminder,Email,client@example.com,+1 555 3492,Completed,36,Riley Chen
+2026-08-15 13:27:00,Newsletter,Email,+1 555 2310,client@example.com,Completed,24,Alexandra Rose
+2026-06-10 14:30:00,Newsletter,SMS,client@example.com,+1 555 5630,Completed,35,Jordan Lee
+2026-08-17 13:18:00,Win-back Campaign,SMS,+1 555 2310,client@example.com,Failed,,Riley Chen
+2026-02-10 12:37:00,Renewal Reminder,SMS,client@example.com,team@example.com,Completed,19,Riley Chen
+2026-04-11 09:51:00,Win-back Campaign,Call,alex@example.com,+1 555 2409,Completed,44,Casey Patel
+2026-04-26 09:20:00,Product Launch,Email,+1 555 1359,+1 555 2409,Completed,33,Alexandra Rose
+2026-06-26 18:05:00,Product Launch,SMS,+1 555 7642,client@example.com,Completed,13,Alexandra Rose
+2026-07-29 10:39:00,Newsletter,Email,+1 555 0531,+1 555 2409,Completed,18,Alexandra Rose
+2026-02-13 15:14:00,Customer Survey,Email,alex@example.com,team@example.com,Completed,43,Casey Patel
+2026-01-08 13:32:00,Renewal Reminder,Email,+1 555 1359,+1 555 2409,Failed,,Riley Chen
+2026-07-11 13:12:00,Customer Survey,SMS,+1 555 1359,+1 555 5630,Pending,54,Riley Chen
+2026-06-30 09:48:00,Newsletter,Email,+1 555 2310,+1 555 3492,Completed,39,Casey Patel

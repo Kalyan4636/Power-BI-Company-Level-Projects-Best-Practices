@@ -1,0 +1,8 @@
+// Get Data > Folder (or Text/CSV) for each file. Pattern for FactSales:
+let
+    Source   = Csv.Document(File.Contents("C:\\DDC\\FactSales.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+    Typed    = Table.TransformColumnTypes(Promoted, {{"Date", type date}, {"StoreKey", Int64.Type}, {"ProductKey", Int64.Type}, {"ChannelKey", Int64.Type}, {"Orders", Int64.Type}, {"Revenue", type number}})
+in
+    Typed
+// Tip: parameterise the folder path (Home > Manage Parameters) so refresh works after deployment.
