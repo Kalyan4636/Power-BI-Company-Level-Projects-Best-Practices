@@ -1,0 +1,52 @@
+// 1) Modeling > New table: create the date table, then mark it (Table tools > Mark as date table > Date)
+Date =
+ADDCOLUMNS(
+    CALENDAR(DATE(2017,1,1), DATE(2020,12,31)),
+    "Year", YEAR([Date]),
+    "Quarter", "Q" & QUARTER([Date]),
+    "Month No", MONTH([Date]),
+    "Month", FORMAT([Date], "MMM"),
+    "Year-Month", FORMAT([Date], "YYYY-MM")
+)
+// Then: sort Month by Month No. Relationship: Date[Date] (1) -> Orders[Order Date] (*), single direction.
+
+// 2) Create an empty table (Enter data, name it _Measures) and add the measures below.
+Total Sales = SUM(Orders[Sales])                                   // format: #,##0 "€"
+Total Cost = SUM(Orders[Cost])
+Total Profit = SUM(Orders[Profit])
+Profit Margin % = DIVIDE([Total Profit], [Total Sales])            // format: 0.0%
+Total Quantity = SUM(Orders[Quantity])
+Orders Count = DISTINCTCOUNT(Orders[Order ID])
+Avg Order Value = DIVIDE([Total Sales], [Orders Count])
+Customers = DISTINCTCOUNT(Orders[Customer Name])
+Profit per Unit = DIVIDE([Total Profit], [Total Quantity])
+
+Sales LY = CALCULATE([Total Sales], SAMEPERIODLASTYEAR('Date'[Date]))
+Profit LY = CALCULATE([Total Profit], SAMEPERIODLASTYEAR('Date'[Date]))
+Sales YoY % = DIVIDE([Total Sales] - [Sales LY], [Sales LY])
+Profit YoY % = DIVIDE([Total Profit] - [Profit LY], [Profit LY])
+Sales YTD = TOTALYTD([Total Sales], 'Date'[Date])
+Sales Rolling 3M = CALCULATE([Total Sales], DATESINPERIOD('Date'[Date], MAX('Date'[Date]), -3, MONTH))
+Sales MoM % =
+VAR Prev = CALCULATE([Total Sales], DATEADD('Date'[Date], -1, MONTH))
+RETURN DIVIDE([Total Sales] - Prev, Prev)
+
+Sales % of Total = DIVIDE([Total Sales], CALCULATE([Total Sales], ALLSELECTED()))
+Loss Orders = CALCULATE([Orders Count], Orders[Profit] < 0)
+Loss Orders % = DIVIDE([Loss Orders], [Orders Count])
+Product Rank = RANKX(ALLSELECTED(Orders[Product Name]), [Total Sales], , DESC, Dense)
+
+// KPI helpers
+YoY Arrow = IF([Sales YoY %] >= 0, "▲ ", "▼ ") & FORMAT(ABS([Sales YoY %]), "0.0%")
+YoY Color = IF([Sales YoY %] >= 0, "#2E9E6B", "#D64545")           // use in Conditional formatting > Field value
+Profit Color = IF([Total Profit] >= 0, "#2E9E6B", "#D64545")
+
+// Metric switcher: Enter data table "Metric" with column [Metric] = Sales, Profit, Quantity; add a slicer on it.
+Selected Metric =
+SWITCH(SELECTEDVALUE(Metric[Metric], "Sales"),
+    "Sales", [Total Sales], "Profit", [Total Profit], "Quantity", [Total Quantity])
+Selected Title = SELECTEDVALUE(Metric[Metric], "Sales") & " by Month"   // use for dynamic visual title
+
+// What-if target: Modeling > New parameter > Numeric range, name "Growth Target", 0 to 0.3, step 0.01, default 0.1
+Sales Target = [Sales LY] * (1 + 'Growth Target'[Growth Target Value])
+Sales vs Target = [Total Sales] - [Sales Target]

@@ -1,0 +1,19 @@
+{
+  "name": "Sales Corporate",
+  "dataColors": ["#1F4E79","#2A9D8F","#5B9BD5","#F4A261","#8AB17D","#7F8FA9","#E9C46A","#264653"],
+  "background": "#FFFFFF", "foreground": "#1F2937", "tableAccent": "#1F4E79",
+  "good": "#2E9E6B", "bad": "#D64545", "neutral": "#F4A261",
+  "textClasses": {
+    "title": {"fontFace": "Segoe UI Semibold", "fontSize": 14, "color": "#1F2937"},
+    "label": {"fontFace": "Segoe UI", "fontSize": 10, "color": "#4B5563"},
+    "callout": {"fontFace": "Segoe UI Semibold", "fontSize": 28, "color": "#1F4E79"}
+  },
+  "visualStyles": {
+    "*": {"*": {
+      "title": [{"show": true, "fontFamily": "Segoe UI Semibold", "fontSize": 12}],
+      "background": [{"show": true, "color": {"solid": {"color": "#FFFFFF"}}, "transparency": 0}],
+      "border": [{"show": true, "color": {"solid": {"color": "#E5E7EB"}}, "radius": 6}]
+    }},
+    "page": {"*": {"background": [{"color": {"solid": {"color": "#F3F5F9"}}, "transparency": 0}]}}
+  }
+}
