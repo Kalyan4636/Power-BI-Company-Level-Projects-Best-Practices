@@ -1,0 +1,22 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-IN
+	valueFilterBehavior: independent
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 0
+
+annotation PBI_ProTooling = ["DevMode","MCP-PBIModeling"]
+
+annotation PBI_QueryOrder = ["orders","delivery","ratings"]
+
+ref table orders
+ref table delivery
+ref table ratings
+ref table Date
+
+ref cultureInfo en-US
+

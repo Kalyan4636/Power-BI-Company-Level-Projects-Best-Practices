@@ -1,0 +1,54 @@
+table delivery
+	lineageTag: 82a52a6b-df20-4627-9934-6b84aeb3370a
+
+	column order_id
+		dataType: string
+		lineageTag: 307feafb-6a7a-4aaa-8200-889f23b1a877
+		summarizeBy: none
+		sourceColumn: order_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column actual_delivery_time_mins
+		dataType: int64
+		formatString: 0
+		lineageTag: 69ed1084-3040-47a7-994d-2f3711e10c1e
+		summarizeBy: sum
+		sourceColumn: actual_delivery_time_mins
+
+		annotation SummarizationSetBy = Automatic
+
+	column expected_delivery_time_mins
+		dataType: int64
+		formatString: 0
+		lineageTag: 9c032063-21b9-437f-93c5-c13b02776020
+		summarizeBy: sum
+		sourceColumn: expected_delivery_time_mins
+
+		annotation SummarizationSetBy = Automatic
+
+	column distance_km
+		dataType: double
+		lineageTag: 2ba4f38a-4b78-4884-9177-c91fa4cfe38c
+		summarizeBy: sum
+		sourceColumn: distance_km
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition delivery = m
+		mode: import
+		source =
+				let
+				  Source = Excel.Workbook(File.Contents("D:\temp-woking-folder\dryrun\powerbi\QuickBite_Orders_Messy.xlsx"), null, true),
+				  #"Navigation 1" = Source{[Item = "delivery", Kind = "Sheet"]}[Data],
+				  #"Promoted headers" = Table.PromoteHeaders(#"Navigation 1", [PromoteAllScalars = true]),
+				  // Some delivery times arrive as text like "45 mins"
+				  #"Fixed actual_delivery_time_mins" = Table.TransformColumns(#"Promoted headers", {{"actual_delivery_time_mins", each if _ is text then Number.From(Text.Select(_, {"0".."9", "."}), "en-US") else _}}),
+				  #"Changed column type" = Table.TransformColumnTypes(#"Fixed actual_delivery_time_mins", {{"order_id", type text}, {"actual_delivery_time_mins", Int64.Type}, {"expected_delivery_time_mins", Int64.Type}, {"distance_km", type number}}, "en-US")
+				in
+				  #"Changed column type"
+
+	annotation PBI_ResultType = Table
+

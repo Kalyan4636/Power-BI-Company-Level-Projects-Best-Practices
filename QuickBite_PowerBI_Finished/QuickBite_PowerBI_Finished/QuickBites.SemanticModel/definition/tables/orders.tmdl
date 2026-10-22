@@ -1,0 +1,171 @@
+table orders
+	lineageTag: b182cb1c-43c1-4897-868d-5975824281a9
+
+	/// Every order placed, including cancelled.
+	measure Orders = COUNTROWS(orders)
+		formatString: #,0
+		displayFolder: Crisis
+		lineageTag: 1ab3d57a-e1b5-4b6c-afba-3283bb390079
+
+	/// Average monthly order count across the months in context. Months with no orders are skipped.
+	measure 'Orders per Month' = AVERAGEX(VALUES('Date'[Month Start]), [Orders])
+		formatString: #,0
+		displayFolder: Crisis
+		lineageTag: 41d11bf7-b5ef-413b-804d-974aebadfc7d
+
+	/// Sum of total_amount on non-cancelled orders.
+	measure Revenue = CALCULATE(SUM(orders[total_amount]), orders[is_cancelled] = FALSE())
+		formatString: #,0
+		displayFolder: Crisis
+		lineageTag: 9bc0064d-4468-4fda-97c8-ccf4de9a4f60
+
+	/// Average monthly revenue (non-cancelled) across the months in context.
+	measure 'Revenue per Month' = AVERAGEX(VALUES('Date'[Month Start]), [Revenue])
+		formatString: #,0
+		displayFolder: Crisis
+		lineageTag: bd73e8fc-6cf6-427d-be95-5da32294b51b
+
+	/// Cancelled orders / all orders.
+	measure 'Cancellation Rate' = DIVIDE(CALCULATE([Orders], orders[is_cancelled] = TRUE()), [Orders])
+		formatString: 0.0%
+		displayFolder: Crisis
+		lineageTag: d7a06ef3-69d5-4a44-92d4-7311cb61b4d8
+
+	/// Average actual delivery minutes on non-cancelled orders.
+	measure 'Avg Delivery Time (mins)' = CALCULATE(AVERAGE(delivery[actual_delivery_time_mins]), orders[is_cancelled] = FALSE())
+		formatString: 0.0
+		displayFolder: Crisis
+		lineageTag: c103af9b-2ba5-4f09-9bc5-8110c0d277ba
+
+	/// Average rating, attributed to the month the order was placed.
+	measure 'Avg Rating' = AVERAGE(ratings[rating])
+		formatString: 0.00
+		displayFolder: Crisis
+		lineageTag: ce587561-156e-450c-8e92-6f4552e7682e
+
+	column order_id
+		dataType: string
+		lineageTag: c2229eba-d1c5-4900-b5d7-4c317bbd0062
+		summarizeBy: none
+		sourceColumn: order_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column customer_id
+		dataType: string
+		lineageTag: ec2c86b3-a435-44ea-93a5-1146e53345d0
+		summarizeBy: none
+		sourceColumn: customer_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column restaurant_id
+		dataType: string
+		lineageTag: 72a03610-706d-4f2c-b59d-15c611e7a975
+		summarizeBy: none
+		sourceColumn: restaurant_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column delivery_partner_id
+		dataType: string
+		lineageTag: ad6a7cba-8e8b-445a-9a2c-2acb106f840f
+		summarizeBy: none
+		sourceColumn: delivery_partner_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_timestamp
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: fd009d47-2b76-4361-aca6-d4c737890981
+		summarizeBy: none
+		sourceColumn: order_timestamp
+
+		annotation SummarizationSetBy = Automatic
+
+	column subtotal_amount
+		dataType: double
+		lineageTag: f04ee9c5-19c7-45cb-9c6b-1c432d3d5f33
+		summarizeBy: sum
+		sourceColumn: subtotal_amount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column discount_amount
+		dataType: double
+		lineageTag: c63ddf29-a0a5-4d62-9d82-501258a08d30
+		summarizeBy: sum
+		sourceColumn: discount_amount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column delivery_fee
+		dataType: double
+		lineageTag: b9107a4f-edd1-4b0d-9698-aefbd1626f89
+		summarizeBy: sum
+		sourceColumn: delivery_fee
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column total_amount
+		dataType: double
+		lineageTag: d13ffd04-e0e5-4efe-a03c-64fc0d2940e3
+		summarizeBy: sum
+		sourceColumn: total_amount
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_cod
+		dataType: boolean
+		lineageTag: a2626e0d-6976-40d1-b4f1-01eb0cf85604
+		summarizeBy: none
+		sourceColumn: is_cod
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_cancelled
+		dataType: boolean
+		lineageTag: 5d0a13eb-336d-4f50-982b-936f4898f112
+		summarizeBy: none
+		sourceColumn: is_cancelled
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_date
+		dataType: dateTime
+		formatString: yyyy-mm-dd
+		lineageTag: 3cd885ed-4c1d-404e-8059-95e6e8467ebe
+		summarizeBy: none
+		sourceColumn: order_date
+
+	partition orders = m
+		mode: import
+		source =
+				let
+				  Source = Excel.Workbook(File.Contents("D:\temp-woking-folder\dryrun\powerbi\QuickBite_Orders_Messy.xlsx"), null, true),
+				  #"Navigation 1" = Source{[Item = "orders", Kind = "Sheet"]}[Data],
+				  #"Promoted headers" = Table.PromoteHeaders(#"Navigation 1", [PromoteAllScalars = true]),
+				  // Some timestamps arrive as day-first text (dd/MM/yyyy HH:mm), the rest as real datetimes
+				  #"Fixed order_timestamp" = Table.TransformColumns(#"Promoted headers", {{"order_timestamp", each if _ is text then DateTime.FromText(_, [Format = "dd/MM/yyyy HH:mm", Culture = "en-GB"]) else _, type datetime}}),
+				  // Some totals arrive as text with a currency tag: "Rs 358.98", "₹240.27", "322.75 INR"
+				  #"Fixed total_amount" = Table.TransformColumns(#"Fixed order_timestamp", {{"total_amount", each if _ is text then Number.From(Text.Select(_, {"0".."9", ".", "-"}), "en-US") else _, type number}}),
+				  // Flags mix Y/N, yes/no, Yes, TRUE/FALSE. Unknown spellings raise an error so they surface on refresh instead of becoming false
+				  ToFlag = (v) => let t = Text.Lower(Text.Trim(Text.From(v))) in if v = null then null else if List.Contains({"y", "yes", "true"}, t) then true else if List.Contains({"n", "no", "false"}, t) then false else error "Unknown flag value: " & t,
+				  #"Fixed flags" = Table.TransformColumns(#"Fixed total_amount", {{"is_cod", ToFlag, type logical}, {"is_cancelled", ToFlag, type logical}}),
+				  #"Changed column type" = Table.TransformColumnTypes(#"Fixed flags", {{"order_id", type text}, {"customer_id", type text}, {"restaurant_id", type text}, {"delivery_partner_id", type text}, {"subtotal_amount", type number}, {"discount_amount", type number}, {"delivery_fee", type number}}, "en-US"),
+				  // The export repeats some orders; keep one row per order_id
+				  #"Removed duplicates" = Table.Distinct(#"Changed column type", {"order_id"}),
+				  // Date-only key for the Date table relationship
+				  #"Added order_date" = Table.AddColumn(#"Removed duplicates", "order_date", each DateTime.Date([order_timestamp]), type date)
+				in
+				  #"Added order_date"
+
+	annotation PBI_ResultType = Table
+

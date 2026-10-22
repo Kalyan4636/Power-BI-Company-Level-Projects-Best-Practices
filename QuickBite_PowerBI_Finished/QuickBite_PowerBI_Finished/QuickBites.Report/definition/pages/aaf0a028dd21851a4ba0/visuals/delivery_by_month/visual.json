@@ -1,0 +1,72 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
+  "name": "delivery_by_month",
+  "position": {
+    "x": 660,
+    "y": 370,
+    "z": 2,
+    "height": 670,
+    "width": 600,
+    "tabOrder": 2
+  },
+  "visual": {
+    "visualType": "lineChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Date"
+                    }
+                  },
+                  "Property": "Month"
+                }
+              },
+              "queryRef": "Date.Month",
+              "nativeQueryRef": "Month",
+              "active": true
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "orders"
+                    }
+                  },
+                  "Property": "Avg Delivery Time (mins)"
+                }
+              },
+              "queryRef": "orders.Avg Delivery Time (mins)",
+              "nativeQueryRef": "Avg Delivery Time (mins)"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true,
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Avg delivery time (mins) by month'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,81 @@
+table ratings
+	lineageTag: 36027e2c-8d68-4e72-af91-75165787abdd
+
+	column order_id
+		dataType: string
+		lineageTag: 9f737ea3-6172-4b76-8521-7aec0381e235
+		summarizeBy: none
+		sourceColumn: order_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column customer_id
+		dataType: string
+		lineageTag: f4d4d45c-fdbe-44a6-adbb-0e7252c68359
+		summarizeBy: none
+		sourceColumn: customer_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column restaurant_id
+		dataType: string
+		lineageTag: 5e498272-f8a1-48ff-bedb-35c8b209d901
+		summarizeBy: none
+		sourceColumn: restaurant_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column rating
+		dataType: double
+		lineageTag: 06cfc27f-f43c-4406-a999-2e544dc3acee
+		summarizeBy: sum
+		sourceColumn: rating
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column review_text
+		dataType: string
+		lineageTag: 80e60b44-a7d3-4db2-8f4b-6a337df69bc1
+		summarizeBy: none
+		sourceColumn: review_text
+
+		annotation SummarizationSetBy = Automatic
+
+	column review_timestamp
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 971132af-b4b2-4d47-90be-3874276901dd
+		summarizeBy: none
+		sourceColumn: review_timestamp
+
+		annotation SummarizationSetBy = Automatic
+
+	column sentiment_score
+		dataType: double
+		lineageTag: 292c5d87-73b1-402d-a867-2330fdaa4d60
+		summarizeBy: sum
+		sourceColumn: sentiment_score
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition ratings = m
+		mode: import
+		source =
+				let
+				  Source = Excel.Workbook(File.Contents("D:\temp-woking-folder\dryrun\powerbi\QuickBite_Orders_Messy.xlsx"), null, true),
+				  #"Navigation 1" = Source{[Item = "ratings", Kind = "Sheet"]}[Data],
+				  #"Promoted headers" = Table.PromoteHeaders(#"Navigation 1", [PromoteAllScalars = true]),
+				  // The sheet has fully empty rows; a rating with no order is unusable
+				  #"Removed blank rows" = Table.SelectRows(#"Promoted headers", each [order_id] <> null),
+				  // review_timestamp arrives as day-first text (dd-MM-yyyy HH:mm); en-US parsing swapped day/month or errored
+				  #"Fixed review_timestamp" = Table.TransformColumns(#"Removed blank rows", {{"review_timestamp", each if _ is text then DateTime.FromText(_, [Format = "dd-MM-yyyy HH:mm", Culture = "en-GB"]) else _, type datetime}}),
+				  #"Changed column type" = Table.TransformColumnTypes(#"Fixed review_timestamp", {{"order_id", type text}, {"customer_id", type text}, {"restaurant_id", type text}, {"rating", type number}, {"review_text", type text}, {"sentiment_score", type number}}, "en-US")
+				in
+				  #"Changed column type"
+
+	annotation PBI_ResultType = Table
+

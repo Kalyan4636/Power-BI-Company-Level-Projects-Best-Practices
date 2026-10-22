@@ -1,0 +1,44 @@
+/// Calendar spanning the order months. Period splits at the June 2025 crisis (Before = Jan–May, After = Jun onward).
+table Date
+	lineageTag: 51bfe802-d9a4-4cd2-9df3-a9228a9a5b30
+	dataCategory: Time
+
+	column Date
+		isUnique
+		formatString: yyyy-mm-dd
+		isNameInferred
+		sourceColumn: [Date]
+
+	column 'Month Start'
+		formatString: mmm yyyy
+		isNameInferred
+		sourceColumn: [Month Start]
+
+	column Month
+		isNameInferred
+		sourceColumn: [Month]
+		sortByColumn: 'Month Start'
+
+	column Period
+		isNameInferred
+		sourceColumn: [Period]
+		sortByColumn: 'Period Order'
+
+	column 'Period Order'
+		isHidden
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Period Order]
+
+	partition Date = calculated
+		mode: import
+		source =
+				VAR CrisisStart = DATE(2025, 6, 1)
+				RETURN ADDCOLUMNS(
+				    CALENDAR(DATE(YEAR(MIN(orders[order_date])), MONTH(MIN(orders[order_date])), 1), EOMONTH(MAX(orders[order_date]), 0)),
+				    "Month Start", DATE(YEAR([Date]), MONTH([Date]), 1),
+				    "Month", FORMAT([Date], "MMM yyyy"),
+				    "Period", IF([Date] < CrisisStart, "Before crisis", "After crisis"),
+				    "Period Order", IF([Date] < CrisisStart, 1, 2)
+				)
+

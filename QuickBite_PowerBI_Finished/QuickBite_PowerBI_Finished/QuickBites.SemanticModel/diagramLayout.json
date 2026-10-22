@@ -1,0 +1,74 @@
+{
+  "version": "1.1.0",
+  "diagrams": [
+    {
+      "ordinal": 0,
+      "scrollPosition": {
+        "x": 0,
+        "y": 0
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 1095.1847511806297,
+            "y": 314.804949095111
+          },
+          "nodeIndex": "delivery",
+          "nodeLineageTag": "82a52a6b-df20-4627-9934-6b84aeb3370a",
+          "size": {
+            "height": 176,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 612.3616394153596,
+            "y": 356
+          },
+          "nodeIndex": "orders",
+          "nodeLineageTag": "b182cb1c-43c1-4897-868d-5975824281a9",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 50,
+            "y": -28.129941727546779
+          },
+          "nodeIndex": "ratings",
+          "nodeLineageTag": "36027e2c-8d68-4e72-af91-75165787abdd",
+          "size": {
+            "height": 248,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1009.3616394153596,
+            "y": 0
+          },
+          "nodeIndex": "Date",
+          "nodeLineageTag": "51bfe802-d9a4-4cd2-9df3-a9228a9a5b30",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 0
+        }
+      ],
+      "name": "All tables",
+      "zoomValue": 100,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    }
+  ],
+  "selectedDiagram": "All tables",
+  "defaultDiagram": "All tables"
+}

@@ -1,0 +1,12 @@
+relationship orders_order_date_Date_Date
+	fromColumn: orders.order_date
+	toColumn: Date.Date
+
+relationship delivery_order_id_orders_order_id
+	fromColumn: delivery.order_id
+	toColumn: orders.order_id
+
+relationship ratings_order_id_orders_order_id
+	fromColumn: ratings.order_id
+	toColumn: orders.order_id
+
